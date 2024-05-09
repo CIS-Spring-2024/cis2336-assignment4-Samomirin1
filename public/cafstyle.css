@@ -1,0 +1,118 @@
+*{text-decoration: none;}
+#navb{
+    background-color: #ffefd5; padding-left: 15px;padding-right: 15px;
+}
+#dnav1{
+    display:flex; justify-content: space-between; align-items:center;
+}
+li{
+    list-style: none; display: inline-block;
+}
+li a{
+    color: rgb(0, 0, 0); font-weight: bold;font-size: 20px;margin-right: 25px;
+}
+#logopic{
+    height: auto;
+    width: auto;
+}
+li a:hover{color:coral}
+body{background-color: #ffefd5;}
+
+#slide{
+    filter: brightness(75%);
+    text-align: center;  
+    width: 99vw;
+    height:90vh
+}
+
+#imagecontainer{
+    position: relative;
+    display: inline-block;
+
+}
+#overlay{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color:(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    transform: translate(-50%, -50%);
+}
+#text-overlay h2 {
+    margin: 0;
+}
+#menulink{
+    padding: 8px 15px;
+    background-color: coral;
+    border-radius: 20px;
+    color: whitesmoke;
+}
+#sec1{
+    width: 80%;
+    margin:80px auto;
+}
+header{
+    text-align: center;
+}
+#line{
+    width: 150px;
+    background-color: #ff7f50;
+    height: 4px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+#line2{
+    width: 300px;
+    background-color: #ff7f50;
+    height: 4px;
+    margin: 10px auto;
+    border-radius: 5px;
+}
+
+#sec1title{
+    text-align: center;
+    font-size: 4vmin;
+    color: rgb(9, 93, 93);
+}
+#row{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+ #row #col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+ }
+ #eventpic{
+    width: 500px;
+    height: 400px;
+ }
+ h4{
+    font-size: 3vmin;
+    margin: 20px auto;
+    color: #484872;
+ }
+ p{
+    padding: 0px 40px; 
+    text-align: center;
+ }
+ #footer{ 
+    height: 100px;
+    padding: 20px 80px;
+    margin: 0;
+    background: #484872;
+    text-align: center;
+ }
+#footer p{
+    color: whitesmoke;
+    margin: 20px auto;
+}
+
+button{padding: 8px 15px; background-color: coral; border-radius: 20px; color: whitesmoke; border-color:transparent;top: 50%;}
+
+ 

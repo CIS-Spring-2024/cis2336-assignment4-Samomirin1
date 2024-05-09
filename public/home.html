@@ -1,0 +1,100 @@
+<html>
+    <title>Whispy Woods Cafe</title>
+    <head>
+        <link rel="stylesheet" href="/cafstyle.css"/>
+    </head>
+        <!-- Navigation bar-->
+        <nav id="navb">
+            <div id="dnav1">
+                    <!--- The following segmemnt is the logo that is in the top right. Href included so when you clickthe logo it takes you back to the home screen-->
+                <div id="logo"> <a href="/home.html"><img src="/WWC.png" id="logopic"></a> </div>
+                    <ul>
+                        <!--Each Navigation bar tab, href provides the clickable link-->
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="/menu.html">Menu</a></li>
+                        <li><a href="#">Catering and Events</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Meal Plans</a></li>
+                        <li><a href="/bio.html">Meet The Founder</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+   
+<header>
+    
+    <!--The following ssegment is the picture slideshow in the middle of the homepage-->
+    <script>
+        var i = 0;
+        var images = [];
+        var time = 3000;
+        
+        images[0] = '/food7.png';
+        images[1] = '/food2.png';
+        images[2] = '/food11.png';
+        images[3] = '/food8.png';
+        images[4] = '/food9.png';
+        images[5] = '/food10.png';
+
+
+    
+        function changeImg(){
+            document.slide.src = images[i];
+        if (i < images.length - 1 ){
+            i++;
+        }  else{
+            i = 0;
+        }
+        setTimeout(changeImg, time)
+    }
+        
+     window.onload = changeImg;
+    </script>
+    <!--The following to div elements hold the picture slideshow-->
+ <div id="homemain">
+   <div id="imagecontainer">
+   <img name="slide" id="slide">
+
+</div>
+<!--- The following div element allows us to place text, links and other elemnts ontop of the slideshow.-->
+   <div id="overlay"> 
+    <a href="/cafmenu.html"><img src="/WWC2.png" id="logopic2">
+    <a href="/menu.html" id="menulink">Check Out Our Menu Here</a>
+</div>
+</div>
+</header>
+<!--This body section includes the Upcoming events section-->
+<body>
+<section id="sec1">
+    <div id="sec1title">
+    <h1>Upcoming Events</h1>
+    <div id="line2"></div> <br>
+    </div>
+    <div id="row">
+        <div id="col">
+            <img src="/vol.png" id="eventpic">
+            <h4>Food Bank Voluntering</h4>
+            <div id="line"></div>
+            <p>We here at Whispy Woods Cafe are very big on giving back to the community. Every quarter, we close down our resturant for a day and all of our staff, and loyal customers volunter at food banks around town spreading joy. </p>
+        </div>
+        <div id="col">
+            <img src="/nigeria.png" id="eventpic">
+            <h4>Nigerian Heritage Day</h4>
+            <div id="line"></div>
+            <p>We here at Whispy Woods Cafe are very big on culture and hertiage. Starting this year, we will be celebrating all of our employes heritage days. We will be kicking this off May 26th, by celebrating Nigerian Heritage day!</p>
+        </div>
+    </div>
+
+</section>
+<!-- Following section contains our Footer section-->
+</body>
+
+    <script> const toTop = () => window.scrollTo({top:0,behavior:'smooth'})</script>
+
+<section id="footer">
+    <div><button id="topb" onclick="toTop()">Back To Top</button></div>
+    <p>2300 Saks Fifth Avenue, TX, 79090, USA | Phone: 1-800-879-1231 | Email: contact@example.com</p>
+    <p>Copyright © 2099 Whispy Woods Cafe</p>
+
+</section> 
+</html>

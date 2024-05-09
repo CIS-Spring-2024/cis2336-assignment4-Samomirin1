@@ -1,0 +1,177 @@
+<html>
+    <title>Whispy Woods Cafe</title>
+    <head>
+        <link rel="stylesheet" href="/menustyle.css"/>
+    </head>
+         <!-- Navigation bar-->
+
+        <nav id="navb">
+            <div id="dnav1">
+                <div id="logo"> <a href="/home.html"><img src="/WWC.png" id="logopic"></a> </div>
+                    <ul>
+                        <li><a href="/home.html">Home</a></li>
+                        <li><a href="/menu.html">Menu</a></li>
+                        <li><a href="#">Catering and Events</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Meal Plans</a></li>
+                        <li><a href="/bio.html">Meet The Founder</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <script>
+            //  Validation Checks
+            function validateForm() {
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        if (name === "" || email === "") {
+            alert("Please fill out all fields.");
+            return false; }
+
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
+            return false;
+                }
+        return true;
+}
+// Email validation
+function isValidEmail(email) {
+       
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    function clearOrder() {
+    // Resets the form
+    document.getElementById("menu_form").reset();
+
+    // Puts the Subtotal values back to 0 after the clear order button is pressed
+    var subtotalElements = document.getElementsByClassName("subtotal");
+    for (var i = 0; i < subtotalElements.length; i++) {
+        subtotalElements[i].innerText = "$0.00";
+    }
+     calculateTotal();
+}
+
+    //Functions that define the subtotals for each menu item
+            function calculateSubtotal(itemIndex) {
+                var price = parseFloat(document.getElementsByClassName("price")[itemIndex].innerText.slice(1));
+                var quantity = parseInt(document.getElementsByClassName("quantity")[itemIndex].value);
+                var subtotal = price * quantity;
+                document.getElementsByClassName("subtotal")[itemIndex].innerText = "$" + subtotal.toFixed(2);
+            }
+            // Reset the function so when the page loads again everything works fine
+            function setup() {
+                var quantities = document.getElementsByClassName("quantity");
+                for (var i = 0; i < quantities.length; i++) {
+                    quantities[i].addEventListener("change", function () {
+                        var itemIndex = this.dataset.index;
+                        calculateSubtotal(itemIndex);
+                    });
+                }
+            }
+        
+            window.onload = function () {
+                setup();
+            };
+        </script>
+        
+<header>
+    <body>
+          <section id="menupage">
+            <div id="container">
+                <h3 id="above_heading">Whispy Woods Cafe</h3>
+                <h2 id="main_heading">RESTURANT MENU</h2>
+                <div id="line2"></div> <br>
+                
+            <form id="menu_form">
+                <div id="menu_container">
+                    <div id="menu_cards" class="menu_cards">
+                        <img src="/menu1.png">
+                         <div id="details" class="details">
+                        <h3 id="item_name" class="item_name">Smokehouse Burger</h3>
+                        <h5 id="price" class="price">$16</h5>
+                        <p id="menudesc">Angus beef patty with maple smoke bacon topped with carmelized onions, and barbecue sauce. With a side of fries</p>
+                    </div>
+                    <!-- Quantiy options  -->
+                    <input type="number" name="item1" id="Burger_Quantity" name="Burger_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(0)">
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div id="menu_cards" class="menu_cards">
+                        <img src="/menu2.png">
+                         <div id="details" class="details">
+                        <h3 id="item_name" class="item_name">Shrimp Tacos</h3>
+                        <h5 id="price" class="price">$12</h5>
+                        <p id="menudesc">Spicy seasoned shrimp,topped with zesty lime crema, avocado, and cilantro. With onions and jalepenos on the side</p>
+                    </div>
+                    <input type="number" name="item2" id="Taco_Quantity" name="Taco_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(1)">
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div id="menu_cards" class="menu_cards">
+                        <img src="/menu3.png">
+                         <div id="details" class="details">
+                        <h3 id="item_name" class="item_name">Sizzling Steak Fajitas</h3>
+                        <h5 id="price" class="price">$24</h5>
+                        <p id="menudesc">Juicy steak strips grilled with onions and peppers, served sizzling hot with warm tortillas and your favorite toppings</p>
+                    </div>
+                    <input type="number" name="item3" id="Fajitas_Quantity" name="Fajitas_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(2)">
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div id="menu_cards" class="menu_cards">
+                        <img src="/menu4.png">
+                         <div id="details" class="details">
+                        <h3 id="item_name" class="item_name">Cajun Alfredo Pasta</h3>
+                        <h5 id="price" class="price">$19</h5>
+                        <p id="menudesc">Creamy sauce with Cajun kick, tossed with onions and your choice of shrimp or blackened chicken on pasta</p>
+                    </div>
+                    <input type="number" name="item4" id="Pasta_Quantity" name="Pasta_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(3)">
+
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div id="menu_cards">
+                        <img src="/menu5.png" class="menu_cards">
+                         <div id="details" class="details">
+                        <h3 id="item_name" class="item_name">Whispy Speciality Pizzas</h3>
+                        <h5 id="price" class="price">$14</h5>
+                        <p id="menudesc">Choose from classic cheese, pepperoni, or our signature smokehouse with savory toppings</p>
+                    </div>
+                    <input type="number" name="item5" id="Pizza_Quantity" name="Pizza_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(4)">
+
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                    <div id="menu_cards" class="details">
+                        <img src="../public/menu6.png" class="menu_cards">
+                         <div id="details">
+                        <h3 id="item_name" class="item_name">Nashville Hot Chicken Sandhwich</h3>
+                        <h5 id="price" class="price">$16</h5>
+                        <p id="menudesc">Crispy fried chicken with optional jalapenos, served with fries on the side. Choose from hot or atomic flavor for an extra kick.</p>
+                    </div>
+                    <input type="number" name="item6" id="Nashville_Quantity" name="Nashville_Quantity" class="quantity" value="0" min="0" onchange="calculateSubtotal(5)">
+                        <span class="subtotal">$0.00</span>
+                    </div>
+                </div>
+                <!-- Input boxes for form -->
+                <div>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+            
+                <button id="Submit_form"  type="submit">Submit Order</button>
+                <button id="Clear_form" type="button" onclick="clearOrder()">Clear Order</button>
+            </form>
+            </div>
+          </section>  
+
+
+
+    </body>
+
+    <section id="footer">
+        <p>2300 Saks Fifth Avenue, TX, 79090, USA | Phone: 1-800-879-1231 | Email: contact@example.com</p>
+        <p>Copyright © 2099 Whispy Woods Cafe</p>
+    
+    </section>
+    </html>
